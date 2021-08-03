@@ -1,0 +1,15 @@
+<div class="logo">
+    <a href="javascript:void(0)" class="simple-text">
+        Allocation Tool
+    </a>
+</div>
+<div class="sidebar-wrapper">
+    <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="{{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,79 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-danger">
+          Filter
+      </div>
+      <div class="card-body row">
+        <div class="col-sm-6">
+          <mat-form-field>
+            <input matInput placeholder="Name">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field>
+            <mat-label>Profile</mat-label>
+            <mat-select>
+              <mat-option *ngFor = "let profile of profiles" [value]="profile.value">
+                {{profile.profileName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-2 my-auto">
+            <mat-checkbox>Active</mat-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="card btn-add ml-auto">
+      <button mat-raised-button color="warn">Add New User</button>
+    </div>
+    <div class="card">
+      <div class="card-header card-header-danger text-center">
+        Users
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover">
+              <thead>
+                  <th>
+                      Name
+                  </th>
+                  <th>
+                      Login
+                  </th>
+                  <th>
+                      Profile
+                  </th>
+                  <th>
+                      Last Access
+                  </th>
+                  <th>
+  
+                  </th>
+              </thead>
+              <tbody>
+                  <tr *ngFor = "let tabledata of tabledatas">
+                      <td>
+                          {{tabledata.name}}
+                      </td>
+                      <td>
+                          {{tabledata.login}}
+                      </td>
+                      <td>
+                          {{tabledata.profile}}
+                      </td>
+                      <td>
+                          {{tabledata.lastaccess}}
+                      </td>
+                      <td (click)="usersModal()" class="point-cursor">
+                          <i class="{{tabledata.editclass}}"></i>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

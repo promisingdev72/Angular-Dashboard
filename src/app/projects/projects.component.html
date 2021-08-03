@@ -1,0 +1,105 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header card-header-danger">
+            Filter
+        </div>
+        <div class="card-body row">
+          <div class="col-sm-4">
+            <mat-form-field>
+              <input matInput placeholder="Name">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field>
+              <mat-label>Unit</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let unit of units" [value]="unit.value">
+                  {{unit.unitName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field>
+              <mat-label>Status</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let statu of status" [value]="statu.value">
+                  {{statu.statusName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="card btn-add ml-auto">
+        <button mat-raised-button color="warn">Add New Projects</button>
+      </div>
+      <div class="card">
+        <div class="card-header card-header-danger text-center">
+          Projects
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Project
+                    </th>
+                    <th>
+                        Client
+                    </th>
+                    <th>
+                        Unit
+                    </th>
+                    <th>
+                        Start
+                    </th>
+                    <th>
+                        end
+                    </th>
+                    <th>
+                        open
+                    </th>
+                    <th>
+    
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let tabledata of tabledatas">
+                        <td>
+                            {{tabledata.status}}
+                        </td>
+                        <td>
+                            {{tabledata.project}}
+                        </td>
+                        <td>
+                            {{tabledata.client}}
+                        </td>
+                        <td>
+                            {{tabledata.unit}}
+                        </td>
+                        <td>
+                            {{tabledata.start}}
+                        </td>
+                        <td>
+                            {{tabledata.end}}
+                        </td>
+                        <td>
+                            {{tabledata.open}}
+                        </td>
+                        <td (click)="projectsModal()" class="point-cursor">
+                            <i class="{{tabledata.editclass}}"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

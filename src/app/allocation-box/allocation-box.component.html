@@ -1,0 +1,134 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header card-header-danger">
+            Filter
+        </div>
+        <div class="card-body row">
+          <div class="col-sm-2">
+            <mat-form-field>
+                <mat-label>Team</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let team of teams" [value]="team.value">
+                    {{team.teamName}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-2">
+            <mat-form-field>
+              <mat-label>Arquitect</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let arquitect of arquitects" [value]="arquitect.value">
+                  {{arquitect.arquitectName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-2">
+            <mat-form-field>
+              <mat-label>Skill</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let skill of skills" [value]="skill.value">
+                  {{skill.skillName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-2">
+            <mat-form-field>
+              <mat-label>Client</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let client of clients" [value]="client.value">
+                  {{client.clientName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-2">
+            <mat-form-field>
+              <mat-label>Projects</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let project of projects" [value]="project.value">
+                  {{project.projectName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-2">
+            <mat-form-field>
+              <mat-label>Status</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let status of statuss" [value]="status.value">
+                  {{status.statusName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="card btn-add ml-auto">
+        <button mat-raised-button color="warn">Add New Allocation</button>
+      </div>
+      <div class="card">
+        <div class="card-header card-header-danger text-center">
+          Allocation
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Skill
+                    </th>
+                    <th>
+                        Arquitect
+                    </th>
+                    <th>
+                        Projects [Client]
+                    </th>
+                    <th>
+                        Period
+                    </th>
+                    <th>
+                        %
+                    </th>
+                    <th>
+                     
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let tabledata of tabledatas">
+                        <td>
+                            {{tabledata.status}}
+                        </td>
+                        <td>
+                            {{tabledata.skill}}
+                        </td>
+                        <td>
+                            {{tabledata.arquitect}}
+                        </td>
+                        <td>
+                            {{tabledata.project}}
+                        </td>
+                        <td>
+                            {{tabledata.period}}
+                        </td>
+                        <td>
+                          {{tabledata.percentage}}
+                      </td>
+                        <td (click)="allocationModal()" class="point-cursor">
+                            <i class="{{tabledata.editclass}}"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

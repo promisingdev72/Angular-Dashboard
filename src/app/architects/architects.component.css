@@ -1,0 +1,11 @@
+.btn-add{
+    width: 25% !important;
+}
+.point-cursor{
+    cursor: pointer;
+}
+@media(max-width:992px){
+    .btn-add{
+        width: 100% !important;
+    }
+}
